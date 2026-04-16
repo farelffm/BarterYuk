@@ -66,4 +66,4 @@ Proyek ini dibuat dengan fokus pada **dokumentasi kode yang bersih (Clean Code)*
 
 ---
 
-*Dibuat untuk keperluan Tugas/Presentasi Pengembangan Aplikasi Mobile.*
+*Dibuat oleh Farel Fazriel Marbella [24082010159] untuk keperluan Tugas/Presentasi Pengembangan Aplikasi Mobile.*

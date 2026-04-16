@@ -3,92 +3,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            android:src="@android:drawable/ic_menu_report_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Nama User"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
-
-        <TextView
-            android:id="@+id/tvUserEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="user@example.com"
-            android:textColor="#666666"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvUserName" />
-
-        <Button
-            android:id="@+id/btnLogout"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Logout"
-            android:textColor="@android:color/holo_red_dark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvUserEmail" />
-
-        <View
-            android:id="@+id/dividerProfile"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardProfile"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="24dp"
-            android:background="#DDDDDD"
-            app:layout_constraintTop_toBottomOf="@id/btnLogout" />
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:src="@android:drawable/ic_menu_report_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.LargeComponent"
+                    app:strokeColor="@color/barter_green"
+                    app:strokeWidth="2dp" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Nama User"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivProfile"
+                    app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+                <TextView
+                    android:id="@+id/tvUserEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="user@example.com"
+                    android:textColor="#666666"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivProfile"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogout"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:padding="0dp"
+                    android:text="Keluar Akun"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/holo_red_dark"
+                    app:layout_constraintStart_toStartOf="@id/tvUserEmail"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserEmail" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tvMyItemsLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:text="Barang Saya"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dividerProfile" />
+            app:layout_constraintTop_toBottomOf="@id/cardProfile" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMyItems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="3"
-            tools:listitem="@layout/item_barter"
-            app:layout_constraintTop_toBottomOf="@id/tvMyItemsLabel" />
+            app:layout_constraintTop_toBottomOf="@id/tvMyItemsLabel"
+            tools:listitem="@layout/item_barter" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddItem"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Tambah Barang"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="Tambah Barang Baru"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="12dp"
+            app:icon="@android:drawable/ic_input_add"
             app:layout_constraintTop_toBottomOf="@id/rvMyItems" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

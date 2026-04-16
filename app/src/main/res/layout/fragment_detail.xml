@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,18 +14,19 @@
             android:id="@+id/ivDetailImage"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="#EEEEEE"
+            android:background="@color/light_gray"
             android:scaleType="centerCrop"
             android:src="@android:drawable/ic_menu_gallery"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/bg_circle_white"
+            android:elevation="4dp"
             android:contentDescription="Kembali"
             android:src="@android:drawable/ic_menu_revert"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +40,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:text="Nama Barang"
+            android:textColor="@android:color/black"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
@@ -49,8 +52,8 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
             android:text="Rp 0"
-            android:textColor="@color/design_default_color_primary"
-            android:textSize="18sp"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/tvDetailName" />
 
@@ -58,8 +61,9 @@
             android:id="@+id/divider1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginVertical="16dp"
-            android:background="#DDDDDD"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#EEEEEE"
             app:layout_constraintTop_toBottomOf="@id/tvDetailValue" />
 
         <TextView
@@ -68,9 +72,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="#F0F0F0"
-            android:padding="4dp"
+            android:background="@drawable/bg_rounded_gray"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
             android:text="Kondisi: Baru"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider1" />
 
@@ -79,9 +85,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:background="#F0F0F0"
-            android:padding="4dp"
+            android:background="@drawable/bg_rounded_gray"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
             android:text="Kategori: Elektronik"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@id/tvDetailCondition"
             app:layout_constraintStart_toEndOf="@id/tvDetailCondition"
             app:layout_constraintTop_toTopOf="@id/tvDetailCondition" />
@@ -91,8 +99,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:text="Deskripsi"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvDetailCondition" />
@@ -104,45 +113,37 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
             android:text="Deskripsi barang akan muncul di sini..."
+            android:textColor="#444444"
+            android:lineSpacingExtra="4dp"
             app:layout_constraintTop_toBottomOf="@id/tvDescriptionLabel" />
 
         <View
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginVertical="16dp"
-            android:background="#DDDDDD"
-            app:layout_constraintTop_toBottomOf="@id/tvDetailDescription" />
-
-        <TextView
-            android:id="@+id/tvReviewLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Ulasan (Dummy)"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider2" />
-
-        <TextView
-            android:id="@+id/tvDummyReview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="8dp"
-            android:text="- Barang sangat bagus! (User A)\n- Recommended seller. (User B)"
-            android:textColor="#666666"
-            app:layout_constraintTop_toBottomOf="@id/tvReviewLabel" />
-
-        <Button
-            android:id="@+id/btnBarter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="24dp"
+            android:background="#EEEEEE"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailDescription" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBarter"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="32dp"
             android:text="Ajukan Barter"
-            app:layout_constraintTop_toBottomOf="@id/tvDummyReview" />
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/barter_green"
+            app:cornerRadius="12dp"
+            app:icon="@android:drawable/ic_menu_rotate"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

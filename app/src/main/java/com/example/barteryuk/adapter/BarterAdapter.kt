@@ -32,7 +32,7 @@ class BarterAdapter(
                 // Menampilkan informasi dasar barang
                 tvItemName.text = barterItem.name
                 tvItemCategory.text = barterItem.category
-                tvItemValue.text = "Est. Nilai: ${barterItem.estimatedValue}"
+                tvItemValue.text = "Rp ${barterItem.estimatedValue}"
                 tvItemCondition.text = barterItem.condition
                 
                 // Menampilkan atau menyembunyikan identitas pemilik berdasarkan parameter showOwner

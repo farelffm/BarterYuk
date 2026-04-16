@@ -2,52 +2,100 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="24dp">
 
-        <ImageView
-            android:id="@+id/ivItemImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="#EEEEEE"
-            android:scaleType="centerInside"
-            android:src="@android:drawable/ic_menu_camera"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btnUploadImage"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+        <TextView
+            android:id="@+id/tvAddTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Upload Gambar (Dummy)"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Tambah Barang"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivItemImage" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#EEEEEE"
+            app:strokeWidth="1dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAddTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray">
+
+                <ImageView
+                    android:id="@+id/ivItemImage"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    app:layout_constraintBottom_toTopOf="@+id/btnUploadImage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:tint="#CCCCCC" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadImage"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Klik untuk Ambil Foto"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivItemImage" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:hint="Nama Barang"
-            app:layout_constraintTop_toBottomOf="@id/btnUploadImage">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:layout_constraintTop_toBottomOf="@id/cardImage">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilDescription"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Deskripsi"
+            android:layout_marginTop="16dp"
+            android:hint="Deskripsi Barang"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
             app:layout_constraintTop_toBottomOf="@id/tilName">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -55,22 +103,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="top"
+                android:textColor="@android:color/black"
                 android:inputType="textMultiLine"
                 android:lines="3" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilValue"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:hint="Estimasi Nilai (Rp)"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
             app:layout_constraintTop_toBottomOf="@id/tilDescription">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,15 +134,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Kategori"
+            android:text="Pilih Kategori"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilValue" />
 
-        <Spinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/spinnerCategory"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_spinner"
+            android:paddingHorizontal="12dp"
+            android:spinnerMode="dropdown"
             app:layout_constraintTop_toBottomOf="@id/tvCategoryLabel" />
 
         <TextView
@@ -95,7 +155,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Kondisi"
+            android:text="Kondisi Barang"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/spinnerCategory" />
 
@@ -103,6 +165,7 @@
             android:id="@+id/rgCondition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/tvConditionLabel">
 
@@ -110,22 +173,29 @@
                 android:id="@+id/rbNew"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Baru" />
+                android:text="Baru"
+                android:buttonTint="@color/barter_green" />
 
             <RadioButton
                 android:id="@+id/rbUsed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Bekas" />
+                android:layout_marginStart="24dp"
+                android:text="Bekas"
+                android:buttonTint="@color/barter_green" />
         </RadioGroup>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Simpan Barang"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:text="Simpan &amp; Publish"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/barter_green"
+            app:cornerRadius="12dp"
             app:layout_constraintTop_toBottomOf="@id/rgCondition" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -87,8 +87,8 @@ class HomeFragment : Fragment() {
         
         for (i in 0 until size) {
             val dot = ImageView(requireContext())
-            // Gunakan icon sistem sebagai representasi titik (bulat)
-            dot.setImageDrawable(ContextCompat.getDrawable(requireContext(), android.R.drawable.presence_invisible))
+            // Gunakan drawable lokal untuk indikator titik
+            dot.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.dot_inactive))
             val params = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -109,10 +109,10 @@ class HomeFragment : Fragment() {
             val imageView = binding.dotIndicator.getChildAt(i) as ImageView
             if (i == position) {
                 // Titik aktif (berwarna/terisi)
-                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), android.R.drawable.presence_online))
+                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.dot_active))
             } else {
                 // Titik tidak aktif (transparan/kosong)
-                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), android.R.drawable.presence_invisible))
+                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.dot_inactive))
             }
         }
     }

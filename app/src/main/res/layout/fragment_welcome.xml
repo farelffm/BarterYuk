@@ -3,26 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="24dp">
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@android:drawable/ic_menu_share"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@android:drawable/ic_menu_rotate"
         app:layout_constraintBottom_toTopOf="@+id/tvTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:tint="@color/barter_green" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Selamat Datang di BarterYuk"
-        android:textSize="24sp"
+        android:layout_marginTop="24dp"
+        android:text="BarterYuk"
+        android:textColor="@color/primary"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvSubtitle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,28 +38,39 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Tukarkan barangmu dengan mudah"
+        android:textColor="#666666"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Login"
+        android:layout_height="56dp"
+        android:layout_marginTop="48dp"
+        android:text="Masuk Sekarang"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/primary"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRegister"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_marginTop="16dp"
-        android:text="Daftar Akun"
+        android:text="Daftar Akun Baru"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="@color/primary"
+        app:cornerRadius="12dp"
+        app:strokeColor="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnLogin" />
 

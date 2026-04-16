@@ -51,6 +51,7 @@ class DetailFragment : Fragment() {
         if (isMyItem) {
             // Jika barang milik sendiri, muncul tombol Edit
             binding.btnBarter.text = "Edit Barang"
+            binding.btnBarter.icon = null // Sembunyikan icon swap jika tombol Edit
             binding.btnBarter.setOnClickListener {
                 Toast.makeText(requireContext(), "Fitur Edit (Dummy) untuk ${item.name}", Toast.LENGTH_SHORT).show()
             }
@@ -61,6 +62,7 @@ class DetailFragment : Fragment() {
                 Toast.makeText(requireContext(), "Permintaan barter untuk ${item.name} telah diajukan!", Toast.LENGTH_LONG).show()
                 binding.btnBarter.isEnabled = false
                 binding.btnBarter.text = "Permintaan Terkirim"
+                binding.btnBarter.icon = null
             }
         }
     }

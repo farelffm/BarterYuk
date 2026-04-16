@@ -1,17 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.BarterYuk" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- Theme.MaterialComponents.Light forces the app to use a light background even if the device is in dark mode -->
+    <style name="Theme.BarterYuk" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/design_default_color_primary</item>
-        <item name="colorPrimaryVariant">@color/design_default_color_primary_variant</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
+
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/design_default_color_secondary</item>
-        <item name="colorSecondaryVariant">@color/design_default_color_secondary_variant</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
         <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Background and Surface colors - FORCED LIGHT -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">#666666</item>
+
+        <!-- Disable MIUI/System Force Dark -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+        <!-- Fix for Bottom Navigation -->
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+
+        <!-- Fix for Edit Texts to ensure black text -->
+        <item name="editTextStyle">@style/Widget.App.EditText</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
+        <item name="itemRippleColor">@color/accent</item>
+        <item name="elevation">8dp</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="Widget.App.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">#888888</item>
+        <item name="android:backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/primary</item>
+        <item name="android:textColorHint">#888888</item>
     </style>
 </resources>

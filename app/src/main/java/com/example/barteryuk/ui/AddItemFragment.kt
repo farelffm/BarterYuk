@@ -35,7 +35,20 @@ class AddItemFragment : Fragment() {
 
         // Konfigurasi Spinner untuk pilihan kategori barang
         val categories = arrayOf("Elektronik", "Fashion", "Hobi", "Furniture", "Lainnya")
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, categories)
+        val adapter = object : ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, categories) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val v = super.getView(position, convertView, parent)
+                (v as? android.widget.TextView)?.setTextColor(android.graphics.Color.BLACK)
+                return v
+            }
+
+            override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val v = super.getDropDownView(position, convertView, parent)
+                (v as? android.widget.TextView)?.setTextColor(android.graphics.Color.BLACK)
+                v.setBackgroundColor(android.graphics.Color.WHITE)
+                return v
+            }
+        }
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerCategory.adapter = adapter
 

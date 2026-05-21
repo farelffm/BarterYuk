@@ -14,7 +14,7 @@ activityKtx = "1.9.3"
 fragmentKtx = "1.8.5"
 navigation = "2.8.5"
 kotlin = "2.0.21"
-composeBom = "2024.11.00"
+composeBom = "2024.12.01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

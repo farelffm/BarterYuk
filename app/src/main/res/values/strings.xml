@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">BarterYuk</string>
+
+    <!-- Welcome & Auth -->
+    <string name="welcome_title">Selamat Datang!</string>
+    <string name="welcome_desc">Exchange goods with your neighbors. Build trust, reduce waste, and find what your need locally without spending money</string>
+    <string name="login_title">Masuk</string>
+    <string name="register_title">Daftar</string>
+    <string name="hint_email">Masukan Email</string>
+    <string name="hint_password">Masukan Password</string>
+    <string name="hint_confirm_password">Konfirmasi Password</string>
+    <string name="hint_name">Masukan Nama</string>
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="already_have_account">Sudah punya akun? Masuk</string>
+    <string name="dont_have_account">Belum punya akun? Daftar</string>
+    <string name="terms_agreement">Saya menyetujui Syarat dan Ketentuan serta Kebijakan Privasi BarterYuk.</string>
+
+    <!-- Home Screen -->
+    <string name="search_hint">Cari barang atau jasa...</string>
+    <string name="category_title">Kategori</string>
+    <string name="recommendation_title">Rekomendasi untukmu</string>
+    <string name="all_items_title">Semua Barang</string>
+    <string name="cta_title">Coba Kesempatan baru!</string>
+    <string name="cta_desc">Upload barang kamu dan berikan tawaran.</string>
+    <string name="btn_interested">Tertarik</string>
+    <string name="or_login_with">atau masuk dengan</string>
+
+    <!-- Bottom Nav -->
+    <string name="menu_home">Home</string>
+    <string name="menu_categories">Kategori</string>
+    <string name="menu_add">Tambah</string>
+    <string name="menu_history">Riwayat</string>
+    <string name="menu_profile">Profil</string>
+
+    <!-- Accessibility -->
+    <string name="desc_menu_icon">Menu</string>
+    <string name="desc_notification_icon">Notifikasi</string>
+    <string name="desc_banner_image">Banner Promosi</string>
+    <string name="desc_category_icon">Ikon Kategori</string>
+    <string name="desc_product_image">Gambar Produk</string>
+    <string name="desc_back_button">Kembali</string>
+    <string name="desc_logo">Logo BarterYuk</string>
+    <string name="desc_condition_icon">Ikon Kondisi</string>
+    <string name="dummy_item_name">Nama Barang</string>
+    <string name="dummy_item_owner">Oleh: Nama Pemilik</string>
 </resources>

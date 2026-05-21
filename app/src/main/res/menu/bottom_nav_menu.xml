@@ -2,10 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:icon="@android:drawable/ic_dialog_info"
+        android:icon="@android:drawable/ic_menu_today"
         android:title="Home" />
     <item
+        android:id="@+id/categoriesFragment"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Kategori" />
+    <item
+        android:id="@+id/addItemFragment"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Tambah" />
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="Riwayat" />
+    <item
         android:id="@+id/profileFragment"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@android:drawable/ic_menu_myplaces"
         android:title="Profil" />
 </menu>

@@ -1,17 +1,21 @@
 # 📦 BarterYuk - Aplikasi Tukar Barang (Marketplace Barter)
 
-**BarterYuk** adalah aplikasi Android berbasis Kotlin yang dirancang untuk mempermudah pengguna dalam melakukan tukar-menukar barang (barter) secara modern. Aplikasi ini menggunakan arsitektur MVVM (Model-View-ViewModel) dan komponen Jetpack terbaru untuk performa yang optimal dan kode yang terstruktur.
+**BarterYuk** adalah aplikasi Android berbasis Kotlin yang dirancang untuk mempermudah pengguna dalam melakukan tukar-menukar barang (barter) secara modern. Aplikasi ini mengusung estetika **Material Design 3** dengan sentuhan *gradient* yang elegan dan navigasi yang intuitif.
 
 ---
 
-## 🚀 Fitur Utama
+## 🚀 Fitur & Pembaruan Terbaru
 
-- **Autentikasi Pengguna**: Sistem Login dan Register (dengan data simulasi/dummy) untuk mengelola profil pengguna.
-- **Dashboard Marketplace**: Tampilan barang-barang terbaru dengan sistem *Dot Indicator* yang interaktif.
-- **Manajemen Barang**: Pengguna dapat menambahkan barang yang ingin ditukar melalui formulir yang mudah digunakan.
-- **Detail Barang Dinamis**: Menampilkan rincian barang dan secara otomatis menyesuaikan tombol aksi (Edit vs Ajukan Barter) berdasarkan kepemilikan.
-- **Profil Pengguna**: Menampilkan informasi akun dan daftar koleksi barang pribadi ("Barang Saya").
-- **Navigasi Terstruktur**: Menggunakan *Jetpack Navigation Component* untuk alur aplikasi yang mulus dan aman.
+- **Desain Visual Modern**: Menggunakan tema *Vertical Gradient* (#E3F2FD ke #90CAF9) dengan sudut kartu yang sangat membulat (*high corner radius* 20dp-32dp).
+- **Home Screen Terstruktur**: Urutan konten yang dioptimalkan: 
+  `Search Bar` ➔ `Banner Iklan (Sliding)` ➔ `Rekomendasi (Horizontal)` ➔ `CTA Panel` ➔ `Kategori` ➔ `Semua Barang (Grid)`.
+- **Banner Interaktif**: Implementasi `ViewPager2` dengan *Custom Dot Indicators* untuk promosi atau informasi terbaru.
+- **Sistem Kategori Dinamis**: *Horizontal Scroll* kategori dengan 10+ kategori lengkap (Elektronik, Fashion, Hobi, Musik, dll).
+- **Item Card Redesign**: Desain kartu barang baru menggunakan sistem *overlay*:
+  - **Top-Left**: Ikon kategori transparan.
+  - **Top-Right**: Ikon kondisi barang.
+  - **Bottom**: Nama barang dan pemilik dengan latar belakang *translucent black*.
+- **Floating Navigation Bar**: Bottom Navigation yang melayang dengan desain modern untuk akses menu utama.
 
 ---
 
@@ -19,50 +23,40 @@
 
 - **Language**: Kotlin 
 - **Architecture**: MVVM (Model-View-ViewModel)
-- **UI Framework**: XML Layouts dengan **ViewBinding**
+- **UI Framework**: XML Layouts dengan **ViewBinding** & **Material Design 3**
 - **Navigation**: Jetpack Navigation Component (SafeArgs)
 - **Components**: 
+  - `ViewPager2` (Banner Slide)
   - `RecyclerView` (Grid & Horizontal Layout)
-  - `LiveData` & `ViewModel` (State Management)
-  - `CardView` & `Material Components` (Modern UI)
-  - `NestedScrollView` (Smooth Scrolling)
+  - `NestedScrollView` (Smooth UI Experience)
+  - `ConstraintLayout` & `MaterialCardView`
 
 ---
 
-## 📁 Struktur Proyek
+## 📁 Struktur Proyek (Terupdate)
 
 ```text
 app/src/main/java/com/example/barteryuk/
 ├── adapter/
-│   └── BarterAdapter.kt        # Pengelola list barang di UI
+│   ├── BarterAdapter.kt        # Grid "Semua Barang"
+│   ├── RecommendationAdapter.kt # List "Rekomendasi"
+│   └── BannerAdapter.kt        # Slider "Banner Iklan"
 ├── model/
-│   └── BarterItem.kt           # Data class utama untuk barang
+│   └── BarterItem.kt           # Data class utama barang
 └── ui/
-    ├── MainViewModel.kt        # Pusat data dan logika bisnis
-    ├── HomeFragment.kt         # Dashboard utama
-    ├── ProfileFragment.kt      # Manajemen akun dan "Barang Saya"
-    ├── DetailFragment.kt       # Rincian barang & aksi barter
-    ├── AddItemFragment.kt      # Form tambah barang baru
-    ├── LoginFragment.kt        # Halaman masuk
-    ├── RegisterFragment.kt     # Halaman pendaftaran
-    └── WelcomeFragment.kt      # Splash/Welcome screen
+    ├── MainViewModel.kt        # Pusat data (LiveData)
+    ├── HomeFragment.kt         # Dashboard (Urutan elemen baru)
+    ├── ProfileFragment.kt      # Manajemen Akun & "Barang Saya"
+    └── ...                     # Auth & Detail Fragments
 ```
-
----
-
-## 📖 Cara Penggunaan (Demo)
-
-1. **Awal**: Aplikasi dimulai di halaman `Welcome`. Anda bisa memilih `Login` atau `Daftar`.
-2. **Login**: Gunakan akun admin (`admin@admin.co.id` / `admin123`) atau daftar akun baru.
-3. **Jelajah**: Di `Home`, Anda bisa melihat berbagai barang yang tersedia. Klik salah satu untuk melihat detail.
-4. **Tambah Barang**: Pergi ke menu `Profile`, klik tombol tambah (`+`), isi formulir, dan simpan. Barang akan muncul di "Barang Saya" dan di halaman Home.
-5. **Barter**: Jika Anda melihat barang orang lain di Home, Anda bisa menekan tombol "Ajukan Barter" di halaman Detail.
 
 ---
 
 ## 📝 Catatan Pengembangan
 
-Proyek ini dibuat dengan fokus pada **dokumentasi kode yang bersih (Clean Code)**. Setiap file Kotlin telah dilengkapi dengan komentar detail (KDoc) untuk mempermudah pengembang lain memahami alur logika aplikasi.
+Proyek ini difokuskan pada **User Experience (UX)** yang mulus. Urutan elemen di halaman utama disusun sedemikian rupa untuk meningkatkan *engagement* pengguna, mulai dari pencarian, inspirasi (rekomendasi), hingga eksplorasi kategori.
+
+Setiap komponen UI seperti `item_barter.xml` dan `fragment_home.xml` telah dioptimalkan agar responsif dan mengikuti standar desain Android terbaru.
 
 ---
 
